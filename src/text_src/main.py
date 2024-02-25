@@ -12,7 +12,7 @@ load_dataset(percentage=0.1)
 
 # Create tokenized dataset
 # WARNING: this takes more than 1 hour to run, even with 10% dataset
-# vectorized datasets were saved there already, uncomment if you wish to run again
+# vectorized datasets were saved there already in sample_data_text, uncomment if you wish to run again
 # create_tokenized_dataset()
 
 # Load tokenized datasets

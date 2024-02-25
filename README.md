@@ -23,7 +23,7 @@ The project is organized as follows:
         - use portions of cleaned data to tokenize text features using BERT
         - perform PCA to reduce the dimension output of BERT from 768 to 10
         - ***NOTE***: the first two steps take more than one hour to run only for 10% dataset.
-        - concat this to cleaned datasets
+        - concat tokenized vectors to cleaned datasets
         - export data with text vector features
     - TextModels: this notebook is to
         - Perform prediction with LightGBM on data with text vector features
@@ -56,7 +56,7 @@ For categorical features, I used random forest classifiers with training data ar
 
 3. Light GBM (highest R^2 score 0.9). Similar to Random Forest, LightGBM is a tree-based model, but its running time is very fast compared to XGBoos or Random Forest, because LightGBM employs a leaf-wise (best-first) tree growth algorithm, where it chooses the leaf it believes will yield the best split next, regardless of the level of the tree. To prevent overfit, I also used cross validation, and the R^2 scores on the validation and test set are 0.87. After hyper-tunning, the R^2 score on the test set is 0.89. In src/no_text_src/main.py, when we unify training and validation data, the R^2 score on the test set is more than 0.9.
 
-4. Dense neural network. The final model I tried is a dense neural network with keras. The model has one input layer, one hidden layer and one output layer. The R^2 scores for the validation and test set are 0.79.
+4. Dense neural network (highest R^2 score 0.82). The final model I tried is a dense neural network with keras. The model has one input layer, one hidden layer and one output layer. The R^2 scores for the validation and test set are 0.82.
 
 5. Conclusion. The best model for this part is LightGBM, and we can extract 10 important features for the totalRent prediction, they are:
 
