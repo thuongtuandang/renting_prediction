@@ -154,7 +154,7 @@ cython_debug/
 
 git add data/.gitignore
 
-imputers/*
+git add imputers/.gitignore
 
 .DS_Store
 
