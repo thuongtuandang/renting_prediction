@@ -71,7 +71,7 @@ remove_columns(df_train, text_features)
 # Median fill by regio2
 medians_by_regio2 = median_fill(df_train, num_missing_cols, 'regio2')
 # Save medians_by_regio2 DataFrame
-medians_by_regio2.to_pickle('../../models/medians_by_regio2.pkl')
+medians_by_regio2.to_pickle('../../imputers/medians_by_regio2.pkl')
 
 # Fill totalRent = baseRent + serviceCharge
 df_train = fill_totalRent(df_train)
@@ -83,7 +83,7 @@ df_train.drop(columns =['totalRent'], axis=1, inplace=True)
 
 # Label encoder
 df_train, encoders = label_encoding(df_train, cat_features)
-joblib.dump(encoders, '../../models/encoders.joblib')
+joblib.dump(encoders, '../../imputers/encoders.joblib')
 
 # Fill missing categorical values with Random Forest
 classifiers = {}  
@@ -91,12 +91,12 @@ for i, col in enumerate(cat_missing_columns):
     clf = train_imputer(df_train, col, -1)
     classifiers[col] = clf
 # Save classifiers
-joblib.dump(classifiers, '../../models/classifiers.joblib')
+joblib.dump(classifiers, '../../imputers/classifiers.joblib')
 
 # Scaler
 df_train, scaler = train_scaler(df_train, num_features)
 # Save scaler
-joblib.dump(scaler, '../../models/scaler.joblib')
+joblib.dump(scaler, '../../imputers/scaler.joblib')
 
 # Ready to define X_train
 X_train = df_train.values

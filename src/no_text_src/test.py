@@ -52,7 +52,7 @@ remove_columns(X_test, columns_2_drop)
 # remove_columns(X_test, text_features)
 
 # Fill with medians
-medians_by_regio2 = load('../../models/medians_by_regio2.pkl')
+medians_by_regio2 = load('../../imputers/medians_by_regio2.pkl')
 for col in num_missing_cols:
     # For each row in df_val, if the value in the target column is missing,
     # fill it with the median from medians_by_regio2 where 'regio2' matches.
@@ -63,20 +63,20 @@ for col in num_missing_cols:
 print("Finish median fillings")
 
 # Label encoder
-label_encoders = load('../../models/encoders.joblib')
+label_encoders = load('../../imputers/encoders.joblib')
 X_test = label_encoding_test(X_test, cat_features, label_encoders)
 
 print("Finish label encoding")
 
 # Fill missing categorical values
-classifiers = load('../../models/classifiers.joblib')
+classifiers = load('../../imputers/classifiers.joblib')
 for column, clf in classifiers.items():
     fill_with_trained_imputer(X_test, clf, column, -1)
 
 print("Finish imputing")
 
 # Scaler
-scaler = load('../../models/scaler.joblib')
+scaler = load('../../imputers/scaler.joblib')
 X_test[num_features] = scaler.transform(X_test[num_features])
 
 X_test = X_test.values
@@ -91,6 +91,4 @@ y_test_pred = model_evaluation(best_clf, X_test, y_test)
 print(y_test_pred.shape)
 
 residuals = y_test - y_test_pred
-print(residuals.shape)
 histplot(residuals)
-plot(residuals)

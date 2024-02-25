@@ -154,7 +154,7 @@ cython_debug/
 
 data/*
 
-models/*
+imputers/*
 
 .DS_Store
 
