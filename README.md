@@ -56,7 +56,7 @@ For categorical features, I used random forest classifiers with training data ar
 
 4. Dense neural network. The final model I tried is a dense neural network with keras. The model has one input layer, one hidden layer and one output layer. The R^2 scores for the validation and test set are 0.79.
 
-The best model for this part is LightGBM, and we can extract 10 important features for totalRent prediction, they are:
+5. Conclusion. The best model for this part is LightGBM, and we can extract 10 important features for the totalRent prediction, they are:
 
 ['geo_plz', 'livingSpace', 'regio2', 'serviceCharge', 'pricetrend', 'regio3', 'yearConstructed', 'regio1', 'picturecount', 'noRooms']
 
@@ -71,7 +71,7 @@ The training process may require a lot more time, because the output for BERT mo
 
 To speedup the training process, I used LightGBM again because I think for tabular data, with no trend, no seasonal effects, tree-based models excel compared to neural networks.
 
-The result (only for 10% dataset) is quite good with R^2 score 0.81 on the test set. Especially, we can see that in top 10 important features, there are one vector coefficient from PCA: 
+The result (only for 10% dataset) is quite good with R^2 score 0.81 on the test set. Especially, we can see that in top 10 important features, there is a vector coefficient from PCA: 
 
 ['livingSpace', 'geo_plz', 'serviceCharge', 'pricetrend', 'regio2', 'regio1', 'yearConstructed', 'interiorQual', 'regio3', 'description_vec_4'],
 
