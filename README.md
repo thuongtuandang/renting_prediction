@@ -17,12 +17,12 @@ The project is organized as follows:
         - fill missing data
         -  detect and remove outliers
         - export cleaned data into train, validation and test 
-        - ***Note*** I filled missing values only on the training set, and later use trained imputer and medians (without using the target variables totalRent and baseRent) to fill in the validation and test set.
+        - ***NOTE***: I filled missing values only on the training set, and later use trained imputers and medians (without using the target variables totalRent and baseRent) to fill in the validation and test set.
         - Perform a number of machine learning models and results
     - Text2Vect: this notebook is to
         - use portions of cleaned data to tokenize text features using BERT
         - perform PCA to reduce the dimension output of BERT from 768 to 10
-        - ***Note*** the first two steps take more than one hour to run only for 10% dataset.
+        - ***NOTE***: the first two steps take more than one hour to run only for 10% dataset.
         - concat this to cleaned datasets
         - export data with text vector features
     - TextModels: this notebook is to
