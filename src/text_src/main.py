@@ -9,7 +9,10 @@ import pickle
 # Datasets are saved at /sample_data_text
 # Make sure you run Notebooks/EDA_NoTextModels in advance for cleaned datasets
 load_dataset(percentage=0.1)
+
 # Create tokenized dataset
+# WARNING: this takes more than 1 hour to run, even with 10% dataset
+# vectorized datasets were saved there already, uncomment if you wish to run again
 # create_tokenized_dataset()
 
 # Load tokenized datasets
