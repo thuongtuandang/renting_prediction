@@ -40,6 +40,8 @@ The project is organized as follows:
     - scaler (for standard scaler)
     all of them are saved when we fill missing values on the training data (check src/no_text_src/main.py) and they will be used to fill missing values in the test set (of course without the target variable). For more details, please check src/no_text_src/test.py.
 
+- sample_data_text: it contains clean, tokenized sample datasets with text features.
+
 # Methods for filling missing data
 
 The data contains a lot of missing values as well as duplicated columns. To fill missing numerical features, I used median method, because it is more robust to outliers compared to mean fill and is preferable in datasets with outliers or a skewed distribution.
