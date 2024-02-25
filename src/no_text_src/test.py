@@ -86,9 +86,7 @@ best_clf = load('../../models/best_clf.pkl')
 
 # Now load y_test and see the values and plot the result
 y_test = pd.read_csv('../../test_data/y_test.csv').values[:,0]
-print(y_test.shape)
 y_test_pred = model_evaluation(best_clf, X_test, y_test)
-print(y_test_pred.shape)
-
 residuals = y_test - y_test_pred
 histplot(residuals)
+plot(residuals)
