@@ -9,7 +9,7 @@ https://www.kaggle.com/datasets/corrieaar/apartment-rental-offers-in-germany/dat
 
 The project is organized as follows:
 
-- data: you can download the data from kaggle and put it in. After running Notebooks/EDA_NoTextModels, we will have clean dataset divided into three parts: train, validation and test.
+- data: you can download the data from kaggle and put it in the folder. After running Notebooks/EDA_NoTextModels, we will have clean dataset divided into three parts: train, validation and test.
 
 - Notebooks: this folder contains 3 notebook files:
     - EDA_NoTextModels: this notebook is to
