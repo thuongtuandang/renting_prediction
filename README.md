@@ -38,7 +38,7 @@ The project is organized as follows:
     - encoders (to label encode categorical features)
     - medians_by_regio2 (to fill missing values for numerical features by medians)
     - scaler (for standard scaler)
-    all of them are saved when we fill missing values on the training data (check src/no_text_src/main.py) and they will be used to fill missing values in the test set (of course without the target variable). For more details, please check src/no_text_src/test.py.
+    - ***NOTE***: all of them are saved when we fill missing values on the training data (check src/no_text_src/main.py) and they will be used to fill missing values in the test set (of course without the target variable). For more details, please check src/no_text_src/test.py.
 
 - sample_data_text: it contains clean, tokenized sample datasets with text features.
 
