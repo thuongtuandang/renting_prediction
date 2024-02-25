@@ -77,7 +77,7 @@ The result (only for 10% dataset) is quite good with R^2 score 0.81 on the test 
 
 ['livingSpace', 'geo_plz', 'serviceCharge', 'pricetrend', 'regio2', 'regio1', 'yearConstructed', 'interiorQual', 'regio3', 'description_vec_4'],
 
-where description_vec_4 are the 4-th PCA component in vectorized description.
+where description_vec_4 is the 4-th PCA component in the vectorized description.
 
 # Improvements.
 
