@@ -30,25 +30,25 @@ The project is organized as follows:
 
 
 - src: This is to create model files. There are two parts:
-    - no_text_src: I reorganize and perform everything in EDA_NoTextModels. For test, please follow the file instructions in test.py if you wish to use your own X_test.
-    - text_src: I reorganize and perform everything in the notebook Text2Vect and TextModels. I use only cleaned datasets exported from EDA_NoTextModels. Please read text_src/main.py and text_src/test.py for more details if you wish to customize your test.
+    - no_text_src: I reorganized and performed everything in EDA_NoTextModels. For test, please follow the instructions in the file main.py and test.py in the folder if you wish to use your own X_test.
+    - text_src: I reorganized and performed everything in the notebook Text2Vect and TextModels. I used only cleaned datasets exported from EDA_NoTextModels. Please read text_src/main.py and text_src/test.py for more details if you wish to customize your test.
 
 - imputers: items in this folder are created after running no_text_src/main.py. And this folder is to save 
     - classifiers (to fill missing categorical features)
     - encoders (to label encode categorical features)
     - medians_by_regio2 (to fill missing values for numerical features by medians)
-    - scaler (standard scaler)
+    - scaler (for standard scaler)
     all of them are saved when we fill missing values on the training data (check src/no_text_src/main.py) and they will be used to fill missing values in the test set (of course without the target variable). For more details, please check src/no_text_src/test.py.
 
 # Methods for filling missing data
 
-The data contains a lot of missing values as well as duplicated columns. To fill missing numerical features, I use median method, because it is more robust to outliers compared to mean fill and is preferable in datasets with outliers or a skewed distribution.
+The data contains a lot of missing values as well as duplicated columns. To fill missing numerical features, I used median method, because it is more robust to outliers compared to mean fill and is preferable in datasets with outliers or a skewed distribution.
 
-For categorical features, I use random forest classifiers with training data are known values to predict missing values. Note that during the process, I don't use target variables (totalRent and baseRent).
+For categorical features, I used random forest classifiers with training data are known values to predict missing values. Note that during the process, I did not use the target variables (totalRent and baseRent).
 
 # Models for non-text features
 
-1. Linear Regression (highest R^2 score 0.8). The Pearson correlations show strong linear relationship between some features and the target variable, and the linear regression model are stable with R^2 score for the validation and test set are stable (around 0.68). The residuals fluctuate around 0, and their distribution is quite symmetric and bell-shaped. If we hyper-tune to increase degree of polynomial features to 2, the R^2 score increases to 0.8 on the test set.
+1. Linear Regression (highest R^2 score 0.8). The Pearson correlations show strong linear relationships between some features and the target variable, and the linear regression model is a good starting point. It is stable with R^2 scores on the validation and test set are around 0.68. The residuals fluctuate around 0, and their distribution is quite symmetric and bell-shaped. If we hyper-tune to increase degree of polynomial features to 2, the R^2 score increases to 0.8 on the test set.
 
 2. Random Forest (highest R^2 score 0.84). To prevent overfit for the random forest model, I used cross validation technique, and the R^2 scores on the validation and test set are quite stable (0.81) and after hyper-tuning the R^2 score on the test set is 0.84.
 
