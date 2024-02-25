@@ -13,22 +13,20 @@ The project is organized as follows:
 
 - Notebooks: this folder contains 3 notebook files:
     - EDA_NoTextModels: this notebook is to
-            1. perform data analysis
-            2. fill missing data
-            3. detect and remove outliers
-            4. export cleaned data into train, validation and test 
-            ***Note*** I filled missing values only on the training set, and later use trained imputer and medians (without using target variable) to fill in validation and test set.
-            5. Perform a number of machine learning models and results
+        - perform data analysis
+        - fill missing data
+        -  detect and remove outliers
+        - export cleaned data into train, validation and test 
+        - ***Note*** I filled missing values only on the training set, and later use trained imputer and medians (without using target variable) to fill in validation and test set.
+        - Perform a number of machine learning models and results
     - Text2Vect: this notebook is to
-        1. use portions of cleaned data to tokenize text features using BERT
-        2. perform PCA to reduce the dimension output of BERT from 768 to 10
-        ***Note*** the first two steps take more than one hour to run only for 10% dataset.
-        3. concat this to cleaned datasets
-        4. export data with text vector features
+        - use portions of cleaned data to tokenize text features using BERT
+        - perform PCA to reduce the dimension output of BERT from 768 to 10
+        - ***Note*** the first two steps take more than one hour to run only for 10% dataset.
+        - concat this to cleaned datasets
+        - export data with text vector features
     - TextModels: this notebook is to
-        1. Perform prediction with LightGBM on data with text vector features
-        2. Perform prediction with saved model (without text) on the same test set
-        3. Conclusion
+        - Perform prediction with LightGBM on data with text vector features
 
 
 - src: This is to create model files. There are two parts:
