@@ -17,7 +17,7 @@ The project is organized as follows:
         - fill missing data
         -  detect and remove outliers
         - export cleaned data into train, validation and test 
-        - ***Note*** I filled missing values only on the training set, and later use trained imputer and medians (without using target variable) to fill in validation and test set.
+        - ***Note*** I filled missing values only on the training set, and later use trained imputer and medians (without using the target variables totalRent and baseRent) to fill in the validation and test set.
         - Perform a number of machine learning models and results
     - Text2Vect: this notebook is to
         - use portions of cleaned data to tokenize text features using BERT
