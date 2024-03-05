@@ -1,6 +1,6 @@
 # Retal Prediction
 
-This project is to develop machine learning models for predicting rental price in Germany. The data was scraped from Immoscout24 with almost 270k records and 49 features, and is available at: 
+This project is to develop machine learning models for predicting rental price in Germany. The data was scraped from Immoscout24 with almost 270.000 records and 49 features, and is available at: 
 
 https://www.kaggle.com/datasets/corrieaar/apartment-rental-offers-in-germany/data
 
